@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "6e17fa29-2ede-43c2-8885-2801b8ea32bc",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17300130"
+	},
+	"item": [
+		{
+			"name": "Register Poll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Encuesta 5\",\n   \"created_at\": \"2022-10-17T19:00:01.754Z\",\n   \"open_questions\": [\n       {\n           \"question\": \"dinos en qué podemos mejorar\"\n       }\n   ],\n   \"closed_questions\": [\n       {\n           \"question\": \"volverías a usar nuestra app\",\n            \"answers\": [\n                {\n                    \"text\": \"SI\"\n                },\n                {\n                    \"text\": \"NO\"\n                }\n            ]\n       }\n   ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/polls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polls"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register Poll",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\": \"Encuesta 5\",\n   \"created_at\": \"2022-10-17T19:00:01.754Z\",\n   \"open_questions\": [\n       {\n           \"question\": \"dinos en qué podemos mejorar\"\n       }\n   ],\n   \"closed_questions\": [\n       {\n           \"question\": \"volverías a usar nuestra app\",\n            \"answers\": [\n                {\n                    \"text\": \"SI\"\n                },\n                {\n                    \"text\": \"NO\"\n                }\n            ]\n       }\n   ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/polls",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"polls"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Oct 2022 00:03:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Poll successfully saved"
+				}
+			]
+		},
+		{
+			"name": "Get Poll By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/polls/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polls",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Poll By Id Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/polls/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"polls",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Oct 2022 21:08:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Encuesta 2\",\n    \"created_at\": \"2022-10-15T13:40:02.000Z\",\n    \"open_questions\": [],\n    \"closed_questions\": [\n        {\n            \"question\": \"que tanto nos recomiendas a un amigo\",\n            \"answers\": [\n                {\n                    \"text\": \"1\"\n                },\n                {\n                    \"text\": \"2\"\n                },\n                {\n                    \"text\": \"3\"\n                },\n                {\n                    \"text\": \"4\"\n                },\n                {\n                    \"text\": \"5\"\n                }\n            ]\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get Poll By Id Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/polls/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"polls",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Oct 2022 23:58:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"not found\",\n    \"message\": \"poll with id 2 not found\",\n    \"status\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Polls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/polls/get-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polls",
+						"get-all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Polls",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/polls/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"polls",
+								"get-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Oct 2022 00:05:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Encuesta 2\",\n        \"created_at\": \"2022-10-15T13:40:02.000Z\",\n        \"open_questions\": [],\n        \"closed_questions\": [\n            {\n                \"question\": \"que tanto nos recomiendas a un amigo\",\n                \"answers\": [\n                    {\n                        \"text\": \"1\"\n                    },\n                    {\n                        \"text\": \"2\"\n                    },\n                    {\n                        \"text\": \"3\"\n                    },\n                    {\n                        \"text\": \"4\"\n                    },\n                    {\n                        \"text\": \"5\"\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"name\": \"Encuesta 3\",\n        \"created_at\": \"2022-10-15T13:41:02.000Z\",\n        \"open_questions\": [\n            {\n                \"question\": \"evalúa tu atención\"\n            },\n            {\n                \"question\": \"Volverías a usar nuestro servicio\"\n            }\n        ],\n        \"closed_questions\": []\n    },\n    {\n        \"name\": \"Encuesta 4\",\n        \"created_at\": \"2022-10-15T13:49:02.000Z\",\n        \"open_questions\": [\n            {\n                \"question\": \"danos tu feedback\"\n            }\n        ],\n        \"closed_questions\": [\n            {\n                \"question\": \"nos recomiendas a un amigo\",\n                \"answers\": [\n                    {\n                        \"text\": \"SI\"\n                    },\n                    {\n                        \"text\": \"NO\"\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"name\": \"Encuesta 5\",\n        \"created_at\": \"2022-10-17T19:00:02.000Z\",\n        \"open_questions\": [\n            {\n                \"question\": \"dinos en qué podemos mejorar\"\n            }\n        ],\n        \"closed_questions\": [\n            {\n                \"question\": \"volverías a usar nuestra app\",\n                \"answers\": [\n                    {\n                        \"text\": \"SI\"\n                    },\n                    {\n                        \"text\": \"NO\"\n                    }\n                ]\n            }\n        ]\n    }\n]"
+				}
+			]
+		}
+	]
+}
